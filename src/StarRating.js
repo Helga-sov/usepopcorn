@@ -1,6 +1,5 @@
 import { useState } from "react";
 import PropTypes from 'prop-types';
-import { propTypes } from "redux-form";
 
 const containerStyle = {
     display: 'flex',
@@ -20,7 +19,7 @@ const containerStyle = {
     size: PropTypes.number,
     messages: PropTypes.array,
     className: PropTypes.string,
-    onSetRating: PropTypes.function
+    onSetRating: PropTypes.func,
   }
 
 export default function StarRating({
@@ -33,7 +32,7 @@ export default function StarRating({
   onSetRating
 }) {
   const [rating, setRating] = useState(defaultRating);
-  const [tempRating, setTempRating] = useState(0)
+  const [tempRating, setTempRating] = useState(0);
 
   function handleRating(rating) {
     setRating(rating);
